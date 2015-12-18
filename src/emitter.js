@@ -2,7 +2,7 @@
 //пакетно наполняющему себя и выдающему по одной записи за запрос
 //возможно в будущем реализую интервал - промежуток времени, через который эмиттер пополняется (тогда надо будет еще максимальный размер указывать)
 //min - значение, при котором запускается пополнение - реализую попозже
-function Emitter(size, provider, finalizer){
+export default function Emitter(size, provider, finalizer){
     this.storage = [];
     this.size = size;
     this.provider = provider;
