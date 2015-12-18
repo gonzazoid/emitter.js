@@ -12,7 +12,7 @@
     "name": "Timur Appaev",
     "url": "https://www.facebook.com/timur.appaev.1"
   },
-  "main": "build/emitter.js",
+  "main": "src/emitter.js",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
