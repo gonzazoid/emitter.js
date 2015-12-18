@@ -1,0 +1,25 @@
+{
+  "name": "emitter",
+  "version": "0.0.1",
+  "description": "A simple data emitter module.",
+  "keywords": [
+    "emitter",
+    "storage"
+  ],
+  "homepage": "https://github.com/gonzazoid/emitter.js/",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Timur Appaev",
+    "url": "https://www.facebook.com/timur.appaev.1"
+  },
+  "main": "build/emitter.js",
+  "jsnext:main": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gonzazoid/emitter.js/emitter.js.git"
+  },
+  "scripts": {
+  },
+  "devDependencies": {
+  }
+}
