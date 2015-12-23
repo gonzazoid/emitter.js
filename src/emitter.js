@@ -2,6 +2,10 @@
 //пакетно наполняющему себя и выдающему по одной записи за запрос
 //возможно в будущем реализую интервал - промежуток времени, через который эмиттер пополняется (тогда надо будет еще максимальный размер указывать)
 //min - значение, при котором запускается пополнение - реализую попозже
+'use strict';
+const util = require('util');
+const EventEmitter = require('events');
+
 function Emitter(size, provider, finalizer){
     this.storage = [];
     this.size = size;
@@ -12,6 +16,7 @@ function Emitter(size, provider, finalizer){
     this.finalizer = "function" === typeof finalizer ? finalizer : function(){
     
     };
+    EventEmitter.call(this);
 }
 
 Emitter.prototype.pop = function(reciever){
@@ -48,4 +53,7 @@ Emitter.prototype.reciever = function(stock){
 	while(this.queue.length && this.pop(this.queue.pop()));
 	if(this.queue.length) this.provider(this.size);
 };
+
+util.inherits(Emitter, EventEmitter);
+
 module.exports = Emitter;
