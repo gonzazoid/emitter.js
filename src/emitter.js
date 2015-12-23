@@ -6,7 +6,7 @@
 const util = require('util');
 const EventEmitter = require('events');
 
-function Emitter(size, provider, finalizer){
+var Emitter = function(size, provider, finalizer){
     this.storage = [];
     this.size = size;
     this.provider = provider;
@@ -18,6 +18,7 @@ function Emitter(size, provider, finalizer){
     };
     EventEmitter.call(this);
 }
+util.inherits(Emitter, EventEmitter);
 
 Emitter.prototype.pop = function(reciever){
     //console.log("emitter: pop");
@@ -53,7 +54,5 @@ Emitter.prototype.reciever = function(stock){
 	while(this.queue.length && this.pop(this.queue.pop()));
 	if(this.queue.length) this.provider(this.size);
 };
-
-util.inherits(Emitter, EventEmitter);
 
 module.exports = Emitter;
